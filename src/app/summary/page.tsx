@@ -1,6 +1,8 @@
 import { prisma } from "@/lib/prisma";
 import { DECISIONS } from "@/lib/constants";
 
+export const dynamic = "force-dynamic";
+
 export default async function SummaryPage() {
   const items = await prisma.item.findMany();
   const total = items.length;
